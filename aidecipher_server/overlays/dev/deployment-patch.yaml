@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-aidecipher-deployment
+  labels:
+    app: my-aidecipher-server
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  template:
+    spec:
+      containers:
+        - name: my_aidecipher_server
+          resources:
+            requests:
+              cpu: "1"
+              memory: 1Gi
+            limits:
+              cpu: "1"
+              memory: 1Gi

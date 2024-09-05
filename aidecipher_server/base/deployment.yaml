@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-aidecipher-deployment
+  labels:
+    app: my-aidecipher-server
+spec:
+  selector:
+    matchLabels:
+      app: my-aidecipher-server
+  template:
+    metadata:
+      name: my-aidecipher-pod
+      labels:
+        app: my-aidecipher-server
+    spec:
+      imagePullSecrets:
+        - name: dockerhub-secret
+      containers:
+        - image: leebs1986/my_aidecipher_server:809423e-dev
+          imagePullPolicy: Always
+          name: my_aidecipher_server
+          ports:
+            - containerPort: 5000
+              protocol: TCP
