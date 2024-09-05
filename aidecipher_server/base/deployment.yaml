@@ -17,9 +17,9 @@ spec:
       imagePullSecrets:
         - name: dockerhub-secret
       containers:
-        - image: leebs1986/my_aidecipher_server:809423e-dev
+        - name: my-aidecipher-container
+          image: leebs1986/my_aidecipher_server:809423e-dev
           imagePullPolicy: Always
-          name: my_aidecipher_server
           ports:
             - containerPort: 5000
               protocol: TCP
