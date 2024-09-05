@@ -40,8 +40,8 @@ spec:
               value: dev
             - name: MY_VERSION
               value: 1.0.0
-            - name: MY_ROOT
-              value:
+            #- name: MY_ROOT
+            #  value:
             - name: MY_NAME
               value: API
             - name: MY_LOCAL
