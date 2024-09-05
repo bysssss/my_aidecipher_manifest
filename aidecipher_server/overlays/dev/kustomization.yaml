@@ -9,7 +9,7 @@ namespace: my-aidecipher
 images:
 - name: leebs1986/my_aidecipher_server
   newName: leebs1986/my_aidecipher_server
-  newTag: 809423e-dev
+  newTag: 1.0.4-dev
 
 patchesStrategicMerge:
   - deployment-patch.yaml

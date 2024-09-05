@@ -15,7 +15,7 @@ spec:
         app: my-aidecipher-server
     spec:
       imagePullSecrets:
-        - name: dockerhub-secret2
+        - name: dockerhub-secret
       containers:
         - name: my-aidecipher-container
           image: leebs1986/my_aidecipher_server:809423e-dev
@@ -23,4 +23,26 @@ spec:
           ports:
             - containerPort: 5000
               protocol: TCP
-          command: ['python3', '-u', '-X', 'utf8', 'app/main_api.py']
+          command: ['/docker/entrypoint.sh']
+          args:
+            - gunicorn
+            - --log-level=info
+            #- --access-logfile=/var/log/gunicorn.log
+            #- --keep-alive=5
+          env:
+            - name: PYTHONPATH
+              value: /src
+            - name: PYTHONUNBUFFERED
+              value: 1
+            - name: PYTHONUTF8
+              value: 1
+            - name: MY_STAGE
+              value: dev
+            - name: MY_VERSION
+              value: 1.0.0
+            - name: MY_ROOT
+              value:
+            - name: MY_NAME
+              value: API
+            - name: MY_LOCAL
+              value: 1
