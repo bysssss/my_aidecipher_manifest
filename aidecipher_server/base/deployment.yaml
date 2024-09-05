@@ -15,7 +15,7 @@ spec:
         app: my-aidecipher-server
     spec:
       imagePullSecrets:
-        - name: dockerhub-secret
+        - name: dockerhub-secret2
       containers:
         - name: my-aidecipher-container
           image: leebs1986/my_aidecipher_server:809423e-dev
