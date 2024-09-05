@@ -31,18 +31,18 @@ spec:
             #- --keep-alive=5
           env:
             - name: PYTHONPATH
-              value: /src
+              value: '/src'
             - name: PYTHONUNBUFFERED
-              value: 1
+              value: '1'
             - name: PYTHONUTF8
-              value: 1
+              value: '1'
             - name: MY_STAGE
-              value: dev
+              value: 'dev'
             - name: MY_VERSION
-              value: 1.0.0
+              value: '1.0.0'
             #- name: MY_ROOT
             #  value:
             - name: MY_NAME
-              value: API
+              value: 'API'
             - name: MY_LOCAL
-              value: 1
+              value: '1'
